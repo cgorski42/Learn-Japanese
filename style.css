@@ -7,7 +7,13 @@ h1{
     font-family: 'Alegreya';
 }
 
+nav {
+    display: inline-grid;
+}
+
 nav ul {
+    background-image: url("scroll-mid.png");
+    background-position: center top;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -16,6 +22,31 @@ nav ul {
     width: 100%;
     font-family: 'Alegreya', serif;
 }
+
+nav img{
+    padding: 0;
+}
+
+nav li {
+    width: 100%;
+    text-align:center;
+}
+
+nav li a {
+    display: inline-block;
+    width: 60px;
+    color: 30332C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #EA8567;
+}
+
+
 about img{
     height: 50%;
     width: 50%;
@@ -36,7 +67,6 @@ section {
 
 aside {
     flex: .75;
-    background-image: url("blank-japanese-scroll.jpg");
 }
 
 article {
@@ -44,23 +74,9 @@ article {
     padding: 20px;
 }
 
-nav li {
-    float: left;
-}
 
-nav li a {
-    display: block;
-    width: 60px;
-    color: 30332C;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
 
-/* Change the link color to #111 (black) on hover */
-nav li a:hover {
-    background-color: #EA8567;
-}
+
 
 .active {
     background-color: #4CAF50;
