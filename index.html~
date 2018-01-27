@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <nav>
+      <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="/resources.html">Resources</a></li>
+   <li><a href="/contact.html">Contact</a></li>
+     </ul>
+     </nav>
+  <title>ようこそ! (Welcome)!</title>
+  <link rel="stylesheet" href="/pages/labstyle.css">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet"> 
+</head>
+<body>
+  <h1>ようこそ! (Welcome)!</h1>
+  <h2>一緒に日本語を学びましょう。Let's learn Japanese together!</h2>
+  <p>Welcome! I am a professional photographer specializing in wedding photography. I pride myself on ensuring you and your loved ones look as best as you can. Time goes fast, but pictures last forever. Let your children and grandchildren remember you as the sexy beasts I know you are!  </p>
+  <cover><img src ="cover.jpg"></cover>
+<hr>
+
+</body>
+
+<footer>
+  <p>https://github.com/BYU-CS260-Winter-2018/lab-1-nightwingxoracle.git</p>
+  <p>  Updated 1.24.2018</p>
+  </footer>
+</html>

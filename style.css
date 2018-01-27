@@ -1,0 +1,76 @@
+jap{
+    font-family: 'hakusyukaisyoextrabold_kkRg';
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Alegreya';
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    width: 100%;
+    font-family: 'Alegreya', serif;
+}
+about img{
+    height: 50%;
+    width: 50%;
+    
+}
+cover img{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color:#E5D8AC;
+    font-family: 'Alegreya', serif;
+}
+section {
+ display: flex;
+}
+
+aside {
+    flex: .75;
+    background-image: url("blank-japanese-scroll.jpg");
+}
+
+article {
+    flex: 4.25;
+    padding: 20px;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    width: 60px;
+    color: 30332C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #EA8567;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+
+
+
+footer{
+    background-color: #EA8567;
+    padding: 30px;
+    text-align: center;
+}
