@@ -7,6 +7,9 @@ h1{
     font-family: 'Merienda', cursive;
 }
 
+li {
+    display: block
+}
 
 nav {
     display: inline-grid;
@@ -22,6 +25,17 @@ nav ul {
     width: 100%;
     font-family: 'Alegreya', serif;
 }
+
+/* unvisited link */
+a:link {
+    color: #ED5C68;
+}
+
+/* visited link */
+a:visited {
+    color: #69F261;
+}
+
 
 nav img{
     padding: 0;
@@ -44,31 +58,23 @@ nav li a {
     font-size: 18px; 
 }
 
-/* Change the link color to #111 (black) on hover */
+nav li a:visited {
+    color: #30332C;
+}
 nav li a:hover {
     background-color: #ED5C68;
 }
 
 
-about img{
-    height: 50%;
-    width: 50%;
-}
-cover img{
-    height: 100%;
-    width: 100%;
-}
-
-
 body{
-    background: url("./images/cherry-blossoms-2.jpg");
-    background-size: cover;
+    background: url("./images/cherry-blossoms.jpg");
+    /*background-size: cover;*/
     background-position: top left;
     background-repeat: no-repeat;
     background-color:#ffffff;
     font-family: 'Alegreya', serif;
     color: white;
-    font-size: 20px; 
+    font-size: 15px; 
 }
 section {
  display: flex;
@@ -81,16 +87,28 @@ aside {
 article {
     flex: 4.25;
     padding: 20px;
-    background: rgba(0, 0, 0, .85);
+    background: rgba(66, 48, 40, .90);
     border-radius:10px;
     margin:10px;
     margin-top:19px;
-    margin-left:15px;
+    margin-left:19px;
 }
 
 
 form{
   text-align:center;  
+  background-color:white;
+  border-radius:10px;
+}
+
+form ul{
+    -webkit-padding-start: 0px;
+}
+
+form h1{
+    color:rgba(66, 48, 40, .90);
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
 form li {
@@ -99,21 +117,35 @@ form li {
 }
 
 form input{
-    width: 100%;
+    width: 95%;
 }
 form textarea{
-    width: 100%;
+    width: 95%;
 }
 
-
-.active {
-    background-color: #4CAF50;
+form button{
+    width: 95%;
+    background: #ED5C68;
+    border:none;
+    border-width:0px;
+    color: white;
+    padding:8px;
+    margin-bottom:20px;
 }
-
 
 footer{
     /*background-color: #EA8567;*/
     padding: 30px;
     text-align: center;
     color: black;
+}
+
+footer img{
+    width:10%;
+    background:white;
+    border-radius:15px;
+    padding:10px;
+}
+footer img:hover {
+    background:#ED5C68;
 }
