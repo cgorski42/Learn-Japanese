@@ -12,8 +12,8 @@ nav {
 }
 
 nav ul {
-    background-image: url("scroll-mid.png");
-    background-position: center top;
+    background-image: url("./images/scroll-mid.png");
+    background-position: center bottom;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,9 +33,11 @@ nav li {
 }
 
 nav li a {
+    font-family: 'Merienda', cursive;
+    font-weight: bold;
+    width: 130px;
     display: inline-block;
-    width: 60px;
-    color: 30332C;
+    color: #30332C;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -43,14 +45,13 @@ nav li a {
 
 /* Change the link color to #111 (black) on hover */
 nav li a:hover {
-    background-color: #EA8567;
+    background-color: #ED5C68;
 }
 
 
 about img{
     height: 50%;
     width: 50%;
-    
 }
 cover img{
     height: 100%;
@@ -58,8 +59,13 @@ cover img{
 }
 
 body{
-    background-color:#E5D8AC;
+    background: url("./images/cherry-blossoms-2.jpg");
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color:#ffffff;
     font-family: 'Alegreya', serif;
+    color: white;
 }
 section {
  display: flex;
@@ -72,10 +78,29 @@ aside {
 article {
     flex: 4.25;
     padding: 20px;
+    background: rgba(0, 0, 0, .85);
+    border-radius:10px;
+    margin:10px;
+    margin-top:19px;
+    margin-left:15px;
 }
 
 
+form{
+  text-align:center;  
+}
 
+form li {
+    display: block;
+    padding: 5px;
+}
+
+form input{
+    width: 100%;
+}
+form textarea{
+    width: 100%;
+}
 
 
 .active {
@@ -83,10 +108,8 @@ article {
 }
 
 
-
-
 footer{
-    background-color: #EA8567;
+    /*background-color: #EA8567;*/
     padding: 30px;
     text-align: center;
 }
