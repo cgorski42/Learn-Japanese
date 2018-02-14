@@ -9,7 +9,7 @@ $(document).ready(function() {
 	e.preventDefault();
 	console.log("got here")
 	var value = "ようこそ";
-	var myurl = "https://glosbe.com/gapi/from=jap&dest=eng&format=json&phrase="+ value + "&pretty=true"
+	var myurl = "https://glosbe.com/gapi/translate?from=ja&dest=eng&format=json&phrase="+ value + "&pretty=true"
 	$.ajax({
 	    url: myurl,
 	    dataType : "json" ,
