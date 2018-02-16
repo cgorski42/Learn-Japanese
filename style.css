@@ -2,10 +2,6 @@ jap{
     font-family: 'hakusyukaisyoextrabold_kkRg';
 }
 
-jap:hover {
-    color: #ED5C68;
-    cursor: pointer;
-}
 
 h1{
     font-size: 40px;
@@ -70,6 +66,7 @@ nav li a:link {
 nav li a:visited {
     color: #30332C;
 }
+
 nav li a:hover {
     background-color: #ED5C68;
 }
