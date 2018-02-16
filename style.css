@@ -2,6 +2,11 @@ jap{
     font-family: 'hakusyukaisyoextrabold_kkRg';
 }
 
+jap:hover {
+    color: #ED5C68;
+    cursor: pointer;
+}
+
 h1{
     font-size: 40px;
     font-family: 'Merienda', cursive;
@@ -56,6 +61,10 @@ nav li a {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 18px; 
+}
+
+nav li a:link {
+    color: #30332C;
 }
 
 nav li a:visited {
