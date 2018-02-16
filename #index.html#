@@ -22,7 +22,6 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="study.html">Study</a></li>
                 <li><a href="resources.html">Resources</a></li>
-		 <li><a href="anime.html">Anime</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <!--hr style="width:70%">
                 <li><a href= "https://github.com/nightwingxoracle/Learn-Japanese"><img style="width:70%;" src= "images/github-logo.png"></a></li-->
@@ -31,8 +30,8 @@
         </nav>
     </aside>
     <article>
-        <h1><jap id="japtest">ようこそ</jap>! (Welcome)!</h1>
-        <p><jap>一緒に日本語を学びましょう。</jap> Let's learn Japanese together!</p>
+        <h1><jap >ようこそ</jap>! (Welcome)!</h1>
+        <p><jap>一緒に<jap id="japtest">日</jap>本語を学びましょう。</jap> Let's learn Japanese together!</p>
 
     </article>
     </section>
