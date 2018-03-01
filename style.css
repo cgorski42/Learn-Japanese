@@ -15,6 +15,10 @@ li {
 nav {
     display: inline-grid;
 }
+nav il a:link{
+    color: #30332C;
+}
+    
 
 nav ul {
     background-image: url("./images/scroll-mid.png");
