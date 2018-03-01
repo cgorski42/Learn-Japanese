@@ -18,6 +18,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="study.html">Study</a></li>
                 <li><a href="resources.html">Resources</a></li>
+                <li><a href="anime.html">Anime</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <!--hr style="width:70%">
                 <li><a href= "https://github.com/nightwingxoracle/Learn-Japanese"><img style="width:70%;" src= "images/github-logo.png"></a></li-->
@@ -26,17 +27,35 @@
         </nav>
     </aside>
     <article>
-        <h1>This page is under construction</h1>
-        <p>We will be creating a responsive quiz-style study system for studying Japanese, similar to that at <a href="http://www.freerice.com">freerice.com</a>.</p>
-
-	<p> You can view the first Lesson <a href="lesson1.html">here</a>.</p>
-
+    <div id="quiz">
+        <table>
+        <tr style="height:50px">
+            <td colspan="2">Score: {{score}}</td>
+        </tr>
+        <tr>
+            <th>{{question}}</th>
+            <td>
+                <table>
+                <tr>
+                    <td><button v-on:click="checkAnswer(0)"> {{options[0]}} </button></td>
+                    <td><button v-on:click="checkAnswer(1)"> {{options[1]}} </button></td>
+                </tr>
+                <tr>
+                    <td><button v-on:click="checkAnswer(2)"> {{options[2]}} </button></td>
+                    <td><button v-on:click="checkAnswer(3)"> {{options[3]}} </button></td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+    </div>
     </article>
     </section>
 <hr>
 
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="./quiz.js"></script>
 <footer>
   <a href= "https://github.com/nightwingxoracle/Learn-Japanese"><img src= "images/github-logo.png"></a>
   </footer>

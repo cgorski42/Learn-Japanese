@@ -100,7 +100,6 @@ article {
     margin-left:19px;
 }
 
-
 form{
   text-align:center;  
   background-color:white;
@@ -154,4 +153,33 @@ footer img{
 }
 footer img:hover {
     background:#ED5C68;
+}
+
+div#quiz th{
+    font-size: 40px;
+    font-family: 'Merienda', cursive;
+    width:25%;
+}
+
+div#quiz table {
+    width:100%;
+    height:100%;
+}
+
+div#quiz button{
+    width:100%;
+    height:250px;
+    font-size:25px;
+    font-weight:bold;
+    border:none;
+    border-width:0px;
+    background: rgba(255, 255, 255);
+}
+
+div#quiz h1 {
+    text-align:center;
+}
+
+div#quiz tr {
+    text-align:center;
 }
