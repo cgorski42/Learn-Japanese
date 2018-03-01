@@ -30,7 +30,7 @@
     <div id="quiz">
         <table>
         <tr style="height:50px">
-            <td colspan="2">Score: {{score}}</td>
+            <th colspan="2">Score: {{score}} / {{attempts}}</th>
         </tr>
         <tr>
             <th>{{question}}</th>
@@ -46,6 +46,9 @@
                 </tr>
                 </table>
             </td>
+        </tr>
+        <tr>
+            <td>{{stats}}</td>
         </tr>
         </table>
     </div>
