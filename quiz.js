@@ -85,7 +85,7 @@ var quiz = new Vue({
 		  {hiragana:"わ" , katakana:"ワ" , romaji: "wa"},
 		  {hiragana:"を" , katakana:"ヲ" , romaji: "wo"},
 		  {hiragana:"ん" , katakana:"ン" , romaji: "n/m "},],
-   score: 5
+   score: 0
   },
   created: function() {
   },
