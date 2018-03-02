@@ -38,7 +38,7 @@ a:link {
 
 /* visited link */
 a:visited {
-    color: #69F261;
+    color: #69A561;
 }
 
 
@@ -173,12 +173,17 @@ div#quiz table {
 div#quiz button{
     width:100%;
     height:250px;
-    font-size:25px;
+    font-size:40px;
     font-weight:bold;
     border:none;
     border-width:0px;
-    background: rgba(255, 255, 255);
+    background:#FFFFFF;
 }
+
+div#quiz button:hover{
+    background: rgba(255, 215, 201, 1);
+}
+
 
 div#quiz h1 {
     text-align:center;
@@ -186,4 +191,8 @@ div#quiz h1 {
 
 div#quiz tr {
     text-align:center;
+}
+
+div#quiz td {
+    font-size: 20px;
 }

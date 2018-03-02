@@ -28,6 +28,20 @@
     </aside>
     <article>
     <div id="quiz">
+        <div v-if="showStats">
+        <table>
+            <tr>
+            <th>Character</th>
+            <th>Score</th>
+            </tr>
+            <tr v-for="character in alphabet">
+                <td>{{ character.question }}</td>
+                <td>{{ character.correct }} / {{ character.attempts }}</td>
+            </tr>
+        </table>
+        <button id="stat" style="margin-top:20px; height:60px" v-on:click="toggleStats">Return to quiz</button>
+        </div>
+        <div v-else>
         <table>
         <tr style="height:50px">
             <th colspan="2">Score: {{score}} / {{attempts}}</th>
@@ -37,20 +51,21 @@
             <td>
                 <table>
                 <tr>
-                    <td><button v-on:click="checkAnswer(0)"> {{options[0]}} </button></td>
-                    <td><button v-on:click="checkAnswer(1)"> {{options[1]}} </button></td>
+                    <td><button v-on:click="checkAnswer(0)" v-bind:style="{background: opt_colors[0]}"> {{options[0]}} </button></td>
+                    <td><button v-on:click="checkAnswer(1)" v-bind:style="{background: opt_colors[1]}"> {{options[1]}} </button></td>
                 </tr>
                 <tr>
-                    <td><button v-on:click="checkAnswer(2)"> {{options[2]}} </button></td>
-                    <td><button v-on:click="checkAnswer(3)"> {{options[3]}} </button></td>
+                    <td><button v-on:click="checkAnswer(2)" v-bind:style="{background: opt_colors[2]}"> {{options[2]}} </button></td>
+                    <td><button v-on:click="checkAnswer(3)" v-bind:style="{background: opt_colors[3]}"> {{options[3]}} </button></td>
                 </tr>
                 </table>
             </td>
         </tr>
         <tr>
-            <td>{{stats}}</td>
+            <td colspan = "3"><button style="margin-top:20px; height:60px" v-on:click="toggleStats">Show statistics</button></td>
         </tr>
         </table>
+        </div>
     </div>
     </article>
     </section>
