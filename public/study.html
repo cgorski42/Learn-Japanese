@@ -28,43 +28,66 @@
     </aside>
     <article>
     <div id="quiz">
-        <div v-if="showStats">
-        <table>
-            <tr>
-            <th>Character</th>
-            <th>Score</th>
-            </tr>
-            <tr v-for="character in alphabet">
-                <td>{{ character.question }}</td>
-                <td>{{ character.correct }} / {{ character.attempts }}</td>
-            </tr>
-        </table>
-        <button id="stat" style="margin-top:20px; height:60px" v-on:click="toggleStats">Return to quiz</button>
+        <div v-if="showOpts">
+            <p>Character types: <br><b v-if="warning">(SELECT AT LEAST 2)</b></p>
+              <li><input type="checkbox" id="h" value="0" v-model="checkedNames">
+              <label for="jack">Hiragana</label></li>
+              <li><input type="checkbox" id="k" value="1" v-model="checkedNames">
+              <label for="john">Katakana</label></li>
+              <li><input type="checkbox" id="r" value="2" v-model="checkedNames">
+              <label for="mike">Romaji</label></li>
+              
+            <p>Extended characters:</p>
+              <li><input type="checkbox" id="t" v-model="tenten">
+              <label for="mike">Tenten</label></li>
+              <li><input type="checkbox" id="d" v-model="yoon">
+              <label for="mike">Yōon (Dipthongs)</label></li>
+              
+
+            </li>
+            <button style="margin-top:20px; height:60px" v-on:click="saveStats">Save!</button>
+        </div>
+        <div v-else-if="showStats">
+            <table>
+                <tr>
+                <th>Character</th>
+                <th>Score</th>
+                </tr>
+                <tr v-for="character in alphabet">
+                    <td>{{ character.question }}</td>
+                    <td>{{ character.correct }} / {{ character.attempts }}</td>
+                </tr>
+            </table>
+            <button id="stat" style="margin-top:20px; height:60px" v-on:click="setPage(1)">Return to quiz</button>
         </div>
         <div v-else>
-        <table>
-        <tr style="height:50px">
-            <th colspan="2">Score: {{score}} / {{attempts}}</th>
-        </tr>
-        <tr>
-            <th>{{question}}</th>
-            <td>
-                <table>
-                <tr>
-                    <td><button v-on:click="checkAnswer(0)" v-bind:style="{background: opt_colors[0]}"> {{options[0]}} </button></td>
-                    <td><button v-on:click="checkAnswer(1)" v-bind:style="{background: opt_colors[1]}"> {{options[1]}} </button></td>
-                </tr>
-                <tr>
-                    <td><button v-on:click="checkAnswer(2)" v-bind:style="{background: opt_colors[2]}"> {{options[2]}} </button></td>
-                    <td><button v-on:click="checkAnswer(3)" v-bind:style="{background: opt_colors[3]}"> {{options[3]}} </button></td>
-                </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td colspan = "3"><button style="margin-top:20px; height:60px" v-on:click="toggleStats">Show statistics</button></td>
-        </tr>
-        </table>
+            <table>
+            <tr style="height:50px">
+                <th colspan="2">Score: {{score}} / {{attempts}}</th>
+            </tr>
+            <tr>
+                <th>{{question}}</th>
+                <td>
+                    <table>
+                    <tr>
+                        <td><button v-on:click="checkAnswer(0)" v-bind:style="{background: opt_colors[0]}"> {{options[0]}} </button></td>
+                        <td><button v-on:click="checkAnswer(1)" v-bind:style="{background: opt_colors[1]}"> {{options[1]}} </button></td>
+                    </tr>
+                    <tr>
+                        <td><button v-on:click="checkAnswer(2)" v-bind:style="{background: opt_colors[2]}"> {{options[2]}} </button></td>
+                        <td><button v-on:click="checkAnswer(3)" v-bind:style="{background: opt_colors[3]}"> {{options[3]}} </button></td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan = "3">
+                    <button style="margin-top:20px; height:60px" v-on:click="setPage(2)">Options</button>
+                    <button style="margin-top:20px; height:60px" v-on:click="setPage(3)">Show statistics</button>
+                </td>
+                
+            </tr>
+            </table>
         </div>
     </div>
     </article>
