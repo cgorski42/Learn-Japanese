@@ -11,14 +11,14 @@ let ans_mode = 0;
 let q_mode = 2;
 
 app.get('/api/items/', (req, res) => {
-    res.send({ans_mode:ans_mode, q_mode:q_mode});
+    res.send(ans_mode);
 });
 
-app.post('/api/items/', (req, res) => {
+/*app.post('/api/items/', (req, res) => {
     ans_mode = req.body.ans_mode;
-    q_mode = req.body.q_mode;
+   // q_mode = req.body.q_mode;
     res.send({ans_mode:ans_mode, q_mode:q_mode});
-});
+});*/
 
 app.listen(3000, () => console.log('Server listening on port 3000!'));
 
