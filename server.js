@@ -134,7 +134,7 @@ app.get('/api/alphabet/', (req, res) => {
     res.send({alpha: alphabet, tenten: opts[0], yoon: opts[1], numChars: numChars, curPage:pageNum});
 });
 
-app.listen(3000, () => console.log('Server listening on port 3000!'));
+app.listen(3001, () => console.log('Server listening on port 3001!'));
 
 app.put('/api/alphabet/:id', (req, res) => {
   let index = parseInt(req.params.id);
