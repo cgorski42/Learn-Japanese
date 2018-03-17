@@ -131,11 +131,26 @@ app.get('/api/alphabet/', (req, res) => {
     res.send(alphabet);
 });
 
-/*app.post('/api/alphabet/', (req, res) => {
-});*/
+app.post('/api/alphabet/', (req, res) => {
+});
 
 app.listen(3000, () => console.log('Server listening on port 3000!'));
 
-/*app.put('/api/alphabet/:id', (req, res) => {});
+app.put('/api/alphabet/:id', (req, res) => {
+  let index = parseInt(req.params.id);
+  let alpha = alphabet[index];
+  
+  alpha.correct = req.body.correct;
+  alpha.attempts = req.body.attempts;
+  res.send(alpha);
+});
 
-app.delete('/api/alphabet/:id', (req, res) => {});*/
+app.delete('/api/alphabet/', (req, res) => {
+  alphabet.map(alpha => {   
+    alpha.correct = 0;
+    alpha.attempts = 0; 
+    return;
+  });
+  
+  res.sendStatus(200);
+});

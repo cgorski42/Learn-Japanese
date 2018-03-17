@@ -40,7 +40,7 @@ var quiz = new Vue({
     yoonIdx: 71,
     
     showStats: false,
-      showOpts:true,
+    showOpts:true,
     warning: false,
     score: 0,
     attempts: 0,
@@ -145,10 +145,20 @@ var quiz = new Vue({
            this.options[i] = this.alphabet[this.options[i]].answer;
        }
    },
+   updateStats: function(alpha, idx) {
+      axios.put("/api/alphabet/" + idx, {
+        attempts: alpha.attempts;
+        correct: alpha.correct;
+      }).then(response => {
+        return true;
+      }).catch(err => {
+      }); 
+   },
    checkAnswer: function(answer)
    {
         this.attempts += 1;
         this.alphabet[this.question_num].attempts += 1;
+        
         if(this.answer === answer)
         { 
             this.opt_colors[answer] = "#69A561";
@@ -163,7 +173,7 @@ var quiz = new Vue({
         this.alphabet[this.question_num].rating = this.alphabet[this.question_num].correct / this.alphabet[this.question_num].attempts;    
   },
   setPage: function(page)
-      {
+  {
       if(page === 1)
 	  {
           this.showStats = false;
@@ -177,7 +187,7 @@ var quiz = new Vue({
           this.showOpts = false;
       }
   },
-  saveStats: function()
+  saveOpts: function()
   {
       if(this.checkedNames.length <=1){ 
         this.warning = true;
