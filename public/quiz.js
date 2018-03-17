@@ -148,8 +148,8 @@ var quiz = new Vue({
    },
    updateStats: function(alpha, idx) {
       axios.put("/api/alphabet/" + idx, {
-        attempts: alpha.attempts;
-        correct: alpha.correct;
+          attempts: alpha.attempts,
+          correct: alpha.correct,
       }).then(response => {
         return true;
       }).catch(err => {
@@ -157,9 +157,9 @@ var quiz = new Vue({
    },
   updateOpts: function() {
       axios.put("/api/options/", {
-        tenten: this.tenten;
-        yoon: this.yoon;
-        numChars: this.num_jap_char;
+          tenten: this.tenten,
+          yoon: this.yoon,
+          numChars: this.num_jap_char,
       }).then(response => {
         return true;
       }).catch(err => {
@@ -167,8 +167,15 @@ var quiz = new Vue({
    },
    updatePage: function(page) {
       axios.put("/api/pageNum/", {
-        curPage = page,
+          curPage : page,
       }).then(response => {
+        return true;
+      }).catch(err => {
+      }); 
+   },
+      deleteStats: function() {
+	  axios.delete("/api/alphabet/").then(response => {
+	      this.getOptions();
         return true;
       }).catch(err => {
       }); 
