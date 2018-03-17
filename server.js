@@ -126,12 +126,12 @@ let alphabet = [
         {question: "n/a", answer: "n/a", hiragana:"みゃ" , katakana:"リャ" , romaji: "rya" , type: 3 , correct:0, attempts:0, rating:0 },
         {question: "n/a", answer: "n/a", hiragana:"みゅ" , katakana:"リュ" , romaji: "ryu" , type: 3 , correct:0, attempts:0, rating:0 },
         {question: "n/a", answer: "n/a", hiragana:"みょ" , katakana:"リョ" , romaji: "ryo" , type: 3 , correct:0, attempts:0, rating:0 },];
+let opts = [false,false];
+let numChars = 45;
+let pageNum = 2;
 
 app.get('/api/alphabet/', (req, res) => {
-    res.send(alphabet);
-});
-
-app.post('/api/alphabet/', (req, res) => {
+    res.send({alpha: alphabet, tenten: opts[0], yoon: opts[1], numChars: numChars, curPage:pageNum});
 });
 
 app.listen(3000, () => console.log('Server listening on port 3000!'));
@@ -143,6 +143,19 @@ app.put('/api/alphabet/:id', (req, res) => {
   alpha.correct = req.body.correct;
   alpha.attempts = req.body.attempts;
   res.send(alpha);
+});
+
+app.put('/api/options/', (req, res) => {
+  opts[0] = req.body.tenten;
+  opts[1] = req.body.yoon;
+  numChars = req.body.numChars;
+  
+  res.send(alpha);
+});
+
+app.put('/api/pageNum/', (req, res) => {
+  pageNum = req.curPage;
+  res.send(pageNum);
 });
 
 app.delete('/api/alphabet/', (req, res) => {

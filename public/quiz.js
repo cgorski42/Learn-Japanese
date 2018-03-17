@@ -54,10 +54,11 @@ var quiz = new Vue({
   methods: {
    getOptions: function(){
        axios.get("/api/alphabet/").then(response => {
-          console.log("Got response!");
-          console.log(response.data.length);
-          this.alphabet = response.data;
-          console.log(this.alphabet.length);
+          this.alphabet = response.data.alpha;
+          this.tenten = response.data.tenten;
+          this.yoon = response.data.yoon;
+          this.numChars = response.data.numChars;
+          this.setPage(response.data.curPage);
           return true;
         }).catch(err => {
       });
@@ -154,6 +155,24 @@ var quiz = new Vue({
       }).catch(err => {
       }); 
    },
+  updateOpts: function() {
+      axios.put("/api/options/", {
+        tenten: this.tenten;
+        yoon: this.yoon;
+        numChars: this.num_jap_char;
+      }).then(response => {
+        return true;
+      }).catch(err => {
+      }); 
+   },
+   updatePage: function(page) {
+      axios.put("/api/pageNum/", {
+        curPage = page,
+      }).then(response => {
+        return true;
+      }).catch(err => {
+      }); 
+   },
    checkAnswer: function(answer)
    {
         this.attempts += 1;
@@ -170,7 +189,8 @@ var quiz = new Vue({
         {
             this.opt_colors[answer] = "#ED5C68";
         }
-        this.alphabet[this.question_num].rating = this.alphabet[this.question_num].correct / this.alphabet[this.question_num].attempts;    
+        this.alphabet[this.question_num].rating = this.alphabet[this.question_num].correct / this.alphabet[this.question_num].attempts;
+        this.updateStats(this.alphabet[this.question_num],this.question_num);
   },
   setPage: function(page)
   {
@@ -186,6 +206,7 @@ var quiz = new Vue({
           this.showStats = true;
           this.showOpts = false;
       }
+      this.updatePage(page);
   },
   saveOpts: function()
   {
@@ -202,6 +223,7 @@ var quiz = new Vue({
         this.questionMode(this.checkedNames[0],this.checkedNames[1]);
         console.log(this.checkedNames);
         
+        this.updateOpts;
         this.setPage(1);
         this.nextQuestion();
       }
