@@ -19,7 +19,7 @@ var quiz = new Vue({
 
     question_num: 0,
     question:"n/a",
-    q_mode: AlphaEnum.HIRAGANA,
+    q_mode: 1,
     
     num_options: 4,
     options: ["n/a","n/a","n/a","n/a"],
@@ -28,7 +28,7 @@ var quiz = new Vue({
     ans_mode: AlphaEnum.ROMAJI,
     
     num_jap_char: 45,
-    alphabet: [
+    alphabet: [],/*
         {question: "n/a", answer: "n/a", hiragana:"あ" , katakana:"ア" , romaji: "a" , type: 0 , correct:0, attempts:0, rating:0 },
         {question: "n/a", answer: "n/a", hiragana:"え" , katakana:"エ" , romaji: "e" , type: 0 , correct:0, attempts:0, rating:0 },
         {question: "n/a", answer: "n/a", hiragana:"い" , katakana:"イ" , romaji: "i" , type: 0 , correct:0, attempts:0, rating:0 },
@@ -146,7 +146,7 @@ var quiz = new Vue({
         
         {question: "n/a", answer: "n/a", hiragana:"みゃ" , katakana:"リャ" , romaji: "rya" , type: 3 , correct:0, attempts:0, rating:0 },
         {question: "n/a", answer: "n/a", hiragana:"みゅ" , katakana:"リュ" , romaji: "ryu" , type: 3 , correct:0, attempts:0, rating:0 },
-        {question: "n/a", answer: "n/a", hiragana:"みょ" , katakana:"リョ" , romaji: "ryo" , type: 3 , correct:0, attempts:0, rating:0 },],
+        {question: "n/a", answer: "n/a", hiragana:"みょ" , katakana:"リョ" , romaji: "ryo" , type: 3 , correct:0, attempts:0, rating:0 },],*/
 
     checkedNames: ["0","2"],
     
@@ -165,14 +165,17 @@ var quiz = new Vue({
     stats: ''
   },
   created: function() {
-      //this.getOptions();
+      this.getOptions();
       this.questionMode(this.q_mode, this.ans_mode);
       this.nextQuestion();
   },
   methods: {
    getOptions: function(){
-       axios.get("/api/items/").then(response => {
-          this.ans_mode = response.data;
+       axios.get("/api/alphabet/").then(response => {
+          console.log("Got response!");
+          console.log(response.data.length);
+          this.alphabet = response.data;
+          console.log(this.alphabet.length);
           return true;
         }).catch(err => {
       });
